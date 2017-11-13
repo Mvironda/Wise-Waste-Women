@@ -1,4 +1,15 @@
 require 'sinatra'
 require 'csv'
 
-arr_of_arrs = CSV.read("boroughs.csv")
+get '/' do
+
+	@boroughs = CSV.read("boroughs.csv").flatten
+	erb :index
+
+end
+
+get '/boroughs/:borough_name' do
+	@borough = params[:borough_name]
+
+	erb :borough
+end
