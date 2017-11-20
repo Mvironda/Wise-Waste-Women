@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'csv'
-require 'twitter'
+## require 'twitter'
 
 get '/' do
 
